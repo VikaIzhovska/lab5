@@ -1,0 +1,16 @@
+.tr{
+ line-height: 35px;
+ text-align: center;
+ background-color:black;
+ border-style:solid;
+ border-radius: 10px;
+ border-color: black;
+ margin:5px;
+ 
+}
+.td{
+    font-size:17pt;
+    background-color: beige;
+    border-style:solid;
+    border-color: beige;
+}
