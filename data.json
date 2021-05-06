@@ -1,8 +1,0 @@
-[  
-    {"username":"Name","age":"Age","position":"Position","experience":"Experience"},
-    {"username":"Karina","age":23,"position":"Junior","experience":2},
-    {"username":"Andrew","age":42,"position":"Senior","experience":7},
-    {"username":"Olivia","age":35,"position":"Middle","experience":4},
-    {"username":"Steve","age":19,"position":"Trainee","experience":0},
-    {"username":"Viktor","age":51,"position":"Senior","experience":27}
-]

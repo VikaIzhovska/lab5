@@ -1,16 +1,39 @@
 .tr{
- line-height: 35px;
- text-align: center;
- background-color:black;
- border-style:solid;
- border-radius: 10px;
- border-color: black;
- margin:5px;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(37, 109, 85);
+    border-style:groove;
+    border-color:rgb(42, 40, 153);
+    margin:5px;
+    padding:15px;
+
  
 }
 .td{
+    text-align: center;
     font-size:17pt;
     background-color: beige;
-    border-style:solid;
-    border-color: beige;
+    border-style:groove;
+    border-color: rgb(42, 40, 153);
+}
+.tdt{
+    text-align: center;
+    font-size:17pt;
+    font-style:italic;
+    font-weight: bold;
+    background-color: rgb(243, 220, 205);
+    border-style:groove;
+    border-color:rgb(42, 40, 153);
+}
+h1{
+    background-color:rgb(118, 146, 223);
+    color:white;
+    padding:15px;
+    text-align: center;
+}
+.myform input{
+    margin:5px;
+}
+body{
+    background-color: rgb(141, 175, 248);
 }

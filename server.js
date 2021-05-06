@@ -1,23 +1,48 @@
-//підключаємо модуль express
-var express=require('express');
-//створюємо проект
-var app=express();
-//папка для віддачі статичного контенту (каталог проекту)
+const express=require('express');
+const app=express();
+const User = require('./models/user');
 app.use(express.static(__dirname));
-//опрацювання кореневого шляху -віддати клієнту index.html
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+ 
 app.get('/',function(req,res){
  res.sendFile(__dirname+'/index.html');
 })
-//порт прослуховування для сервера
-//автоматичний підбір для віддаленого сервера,
-//або 8080 для localhost
 app.listen(process.env.PORT||3000);
-//повідомлення про запуск сервера
 console.log('Run server!');
-var fs=require('fs');
+ 
 app.get('/getusers',function(req,res){
- fs.readFile('data.json','utf-8',function(err,data){
- console.log(data);
- res.send(data);
- })
+    User.find(function(err,data){
+    console.log(data);
+    res.send(data);
+    })
 })
+app.post('/adduser',function(req,res){
+    const data = req.body;
+    console.log(data);
+    const user = new User(data);
+    user.save(function(err,data){
+    if(err){
+        console.log(err.message);
+        return;
+    }
+    console.log(data);
+    res.send(data);
+    })
+})
+app.post('/deleteuser',function(req,res){
+    console.log(req.body);
+    User.remove({_id:req.body.id},function(err,data){
+    res.send('remove user');
+    })
+})
+app.post('/updateuser',function(req,res){
+    console.log(req.body);
+    User.updateOne({_id:req.body.id},{name:req.body.name,age:req.body.age,pos:req.body.pos,exp:req.body.exp},function(err,data){
+    if(err){
+        console.log(err.message);
+        return;
+    }
+    res.send(data);
+    })
+})  
